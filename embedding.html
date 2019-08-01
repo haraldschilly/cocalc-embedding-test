@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <script crossorigin="anonymous" integrity=
+    "sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" src=
+    "https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <style>
+    html,
+    body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    }
+
+    div.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    }
+
+    div.control {
+    flex: 0 1 auto;
+    min-height: 30px;
+    border-bottom: 1px solid black;
+    }
+
+    iframe {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    }
+    </style>
     <title>
     </title>
   </head>
   <body>
-    <h1>
-      embedding
-    </h1>
+    <div class="container">
+      <div class="control">
+        controls: <button class="open" type="button">open action</button>
+      </div>
+      <iframe id="cocalc" src=
+      "https://cocalc.com/14eed217-2d3c-4975-a381-b69edcb40e0e/port/56754/projects?session="
+      style="flex: 1 1 auto" width="100%"></iframe>
+    </div>
+    <script type="text/javascript" src="script.js">
+
+    </script>
   </body>
 </html>
