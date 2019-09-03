@@ -1,16 +1,12 @@
-console.log("js loaded");
 $(document).ready(function() {
-  console.log("document ready");
+  console.log("initializing");
 
   function replies(mesg) {
-    if (
-      !(
-        mesg.origin.endsWith(".cocalc.com") ||
-        mesg.origin == "https://cocalc.com"
-      )
-    )
-      return;
-    $("#answer").html(JSON.stringify(event.data));
+    const allowed =
+      mesg.origin.endsWith(".cocalc.com") ||
+      mesg.origin == "https://cocalc.com";
+    if (!allowed) return;
+    $("#reply").html(JSON.stringify(event.data));
   }
 
   window.addEventListener("message", replies, false);

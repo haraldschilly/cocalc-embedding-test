@@ -1,0 +1,36 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+div.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+div.control {
+    flex: 0 1 auto;
+    min-height: 30px;
+    border-bottom: 2px solid black;
+    padding: 5px;
+}
+
+iframe {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+button {
+    margin: 0 15px;
+}
+
+#reply {
+    margin: 3px;
+    padding: 3px;
+    font-family: monospace;
+}

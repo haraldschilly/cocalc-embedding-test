@@ -5,56 +5,21 @@
     <script crossorigin="anonymous" integrity=
     "sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" src=
     "https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <style>
-    html,
-    body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    }
-
-    div.container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    }
-
-    div.control {
-    flex: 0 1 auto;
-    min-height: 30px;
-    border-bottom: 2px solid black;
-    padding: 5px;
-    }
-
-    iframe {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    }
-
-    button {
-    margin: 0 15px;
-    }
-
-    #answer {
-    border: 1px solid gray;
-    margin: 5px;
-    font-family: monospace;
-    }
-    </style>
+    <link href="style.css" rel="stylesheet" type="text/css">
     <title>
     </title>
   </head>
   <body>
     <div class="container">
       <div class="control">
-        controls: <button id="open" type="button">open action</button>
-        <button id="status" type="button">status action</button> answer:
-        <span id="answer"></span>
+        controls: <button id="open" type="button">open</button> <button id=
+        "status" type="button">status</button> <button id="status" type=
+        "button">close</button>
+        <br>
+        reply: <span id="reply"></span>
       </div>
       <iframe id="cocalc" name="cocalc" src=
-      "https://cocalc.com/14eed217-2d3c-4975-a381-b69edcb40e0e/port/56754/projects?session="
+      "https://cocalc.com/14eed217-2d3c-4975-a381-b69edcb40e0e/port/56754/app?session=&amp;fullscreen=kiosk"
       style="flex: 1 1 auto" width="100%"></iframe>
     </div>
     <script src="script.js" type="text/javascript"></script>
