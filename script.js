@@ -13,7 +13,7 @@ $(document).ready(function() {
 
   window.addEventListener("message", replies, false);
 
-  $("button#open").on("click", function(e) {
+  $("button#openme").on("click", function(e) {
     e.preventDefault();
     console.log("sending open message");
     const payload = {
@@ -21,6 +21,26 @@ $(document).ready(function() {
       project_id: "bc6f81b3-25ad-4d58-ae4a-65649fae4fa5",
       path: "openme.md"
     };
+    frame.postMessage(payload, "https://cocalc.com");
+    return false;
+  });
+
+  $("button#calc").on("click", function(e) {
+    e.preventDefault();
+    console.log("sending open message");
+    const payload = {
+      action: "open",
+      project_id: "bc6f81b3-25ad-4d58-ae4a-65649fae4fa5",
+      path: "calc.ipynb"
+    };
+    frame.postMessage(payload, "https://cocalc.com");
+    return false;
+  });
+
+  $("button#closeall").on("click", function(e) {
+    e.preventDefault();
+    console.log("sending close all message");
+    const payload = { action: "closeall" };
     frame.postMessage(payload, "https://cocalc.com");
     return false;
   });
