@@ -37,6 +37,18 @@ $(document).ready(function() {
     return false;
   });
 
+  $("button#other").on("click", function(e) {
+    e.preventDefault();
+    console.log("sending open message");
+    const payload = {
+      action: "open",
+      project_id: "e24ba30d-edcd-479f-8a26-bbe81f38296c",
+      path: "other.md"
+    };
+    frame.postMessage(payload, "https://cocalc.com");
+    return false;
+  });
+
   $("button#closeall").on("click", function(e) {
     e.preventDefault();
     console.log("sending close all message");
