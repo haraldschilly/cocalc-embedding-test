@@ -15,7 +15,6 @@ $(document).ready(function() {
 
   $("button#openme").on("click", function(e) {
     e.preventDefault();
-    console.log("sending open message");
     const payload = {
       action: "open",
       project_id: "bc6f81b3-25ad-4d58-ae4a-65649fae4fa5",
@@ -27,7 +26,6 @@ $(document).ready(function() {
 
   $("button#calc").on("click", function(e) {
     e.preventDefault();
-    console.log("sending open message");
     const payload = {
       action: "open",
       project_id: "bc6f81b3-25ad-4d58-ae4a-65649fae4fa5",
@@ -39,7 +37,6 @@ $(document).ready(function() {
 
   $("button#other").on("click", function(e) {
     e.preventDefault();
-    console.log("sending open message");
     const payload = {
       action: "open",
       project_id: "e24ba30d-edcd-479f-8a26-bbe81f38296c",
@@ -51,24 +48,59 @@ $(document).ready(function() {
 
   $("button#closeall").on("click", function(e) {
     e.preventDefault();
-    console.log("sending close all message");
-    const payload = { action: "closeall" };
+    frame.postMessage({ action: "closeall" }, "https://cocalc.com");
+    return false;
+  });
+
+  $("button#unknown").on("click", function(e) {
+    e.preventDefault();
+    frame.postMessage({ action: "foo-bar" }, "https://cocalc.com");
+    return false;
+  });
+
+  $("button#missing").on("click", function(e) {
+    e.preventDefault();
+    frame.postMessage({}, "https://cocalc.com");
+    return false;
+  });
+
+  $("button#none").on("click", function(e) {
+    e.preventDefault();
+    frame.postMessage(null, "https://cocalc.com");
+    return false;
+  });
+
+  $("button#string").on("click", function(e) {
+    e.preventDefault();
+    frame.postMessage("{'action': 'foo'}", "https://cocalc.com");
+    return false;
+  });
+
+  $("button#path").on("click", function(e) {
+    e.preventDefault();
+    const payload = {
+      action: "open",
+      project_id: "bc6f81b3-25ad-4d58-ae4a-65649fae4fa5",
+      path: { wrong: "path" }
+    };
     frame.postMessage(payload, "https://cocalc.com");
     return false;
   });
 
-  $("button#error").on("click", function(e) {
+  $("button#projectid").on("click", function(e) {
     e.preventDefault();
-    const payload = { action: "foo-bar" };
+    const payload = {
+      action: "open",
+      project_id: "foo-bar",
+      path: "bar"
+    };
     frame.postMessage(payload, "https://cocalc.com");
     return false;
   });
 
   $("button#status").on("click", function(e) {
     e.preventDefault();
-    console.log("sending open message");
-    const payload = { action: "status" };
-    frame.postMessage(payload, "https://cocalc.com");
+    frame.postMessage({ action: "status" }, "https://cocalc.com");
     return false;
   });
 });
