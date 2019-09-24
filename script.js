@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  init();
+});
+
+function init() {
   console.log("initializing");
 
   const frame = $("#cocalc").get(0).contentWindow;
@@ -41,6 +45,17 @@ $(document).ready(function() {
       action: "open",
       project_id: "e24ba30d-edcd-479f-8a26-bbe81f38296c",
       path: "other.md"
+    };
+    frame.postMessage(payload, "https://cocalc.com");
+    return false;
+  });
+
+  $("button#latex").on("click", function(e) {
+    e.preventDefault();
+    const payload = {
+      action: "open",
+      project_id: "e24ba30d-edcd-479f-8a26-bbe81f38296c",
+      path: "latex/document.tex"
     };
     frame.postMessage(payload, "https://cocalc.com");
     return false;
@@ -103,4 +118,4 @@ $(document).ready(function() {
     frame.postMessage({ action: "status" }, "https://cocalc.com");
     return false;
   });
-});
+}
