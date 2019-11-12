@@ -5,8 +5,8 @@ function init() {
 
   const frame = $("#cocalc").get(0).contentWindow;
   const target = "https://cocalc-test.schil.ly";
-  const proj1 = "20e4a191-73ea-4921-80e9-0a5d792fc511";
-  const proj2 = "4a5f0542-5873-4eed-a85c-a18c706e8bcd";
+  const proj1 = "c37fbd83-c4c3-4f92-b66c-37b8d2c8cdf1";
+  const proj2 = "b7f8f31d-16f4-486a-989b-4e64b90f304b";
 
   function replies(mesg) {
     const allowed =
